@@ -1,0 +1,123 @@
+﻿@model OrderViewModel
+@{
+    ViewData["Title"] = "Bakery Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{ 
+    <style type="text/css">
+        
+        table tr td{
+            vertical-align:middle !important;
+        }
+
+        #bt-add{
+            margin-top:32px;
+        }
+
+    </style>
+}
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-body">
+                <h2>Items to sell</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Packs *(obrigatory)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img width="100" src="~/images/vegemite-scroll.jpg" />
+                            </td>
+                            <td>
+                                <strong>Vegemite Scroll</strong>
+                            </td>
+                            <td>
+                                <span class="badge badge-info">VS5</span>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>3 @@ $6.99</li>
+                                    <li>5 @@ $8.99</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img width="100" src="~/images/blueberry-muffin.jpg" />
+                            </td>
+                            <td>
+                                <strong>Blueberry Muffin</strong>
+                            </td>
+                            <td>
+                                <span class="badge badge-info">MB11</span>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>2 @@ $9.95</li>
+                                    <li>5 @@ $16.95</li>
+                                    <li>8 @@ $24.95</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img width="100" src="~/images/croissant.jpg" />
+                            </td>
+                            <td>
+                                <strong>Croissant</strong>
+                            </td>
+                            <td>
+                                <span class="badge badge-info">CF</span>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>3 @@ $5.95</li>
+                                    <li>5 @@ $9.95</li>
+                                    <li>9 @@ $16.99</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <h2>Basket</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="productCode">Product Code</label>
+                                <input type="text" class="form-control" id="productCode" aria-describedby="" placeholder="Enter Product Code">
+                                <small id="productHelp" class="form-text text-muted">Put a valid product code above.</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <input type="text" class="form-control" id="quantity" aria-describedby="" placeholder="Enter Quantity">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button id="bt-add" type="submit" class="btn btn-success">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
